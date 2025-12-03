@@ -17,7 +17,7 @@ step :: State -> Int -> State
 step (acc, pos) rot =
   let pos' = pos + rot
       cs | rot >= 0 = (pos' `div` 100) - (pos `div` 100)
-         | otherwise =  ((pos - 1) `div` 100) - ((pos' - 1) `div` 100)
+         | otherwise = ((pos - 1) `div` 100) - ((pos' - 1) `div` 100)
   in (acc + cs, pos' `mod` 100)
 
 solve1 :: [Int] -> Int
